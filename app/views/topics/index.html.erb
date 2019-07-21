@@ -20,9 +20,7 @@
       <!--      产生我们要呼叫的 action 的对应 URL。以此例而言，我们要对目前的 topic 投票加分。它会回传/topics/42/upvote（如 topic.id 是 42）-->
       <!--      确保我们使用了 CRUD 里面的 create 操作，而非 read。-->
       <td><%= button_to '+1', upvote_topic_path(topic), method: :post %></td>
-      <td><%= link_to 'Show', topic %></td>
-      <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
-      <td><%= link_to 'Destroy', topic, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      <td><%= link_to 'Delete', topic, method: :delete, data: {confirm: 'Are you sure?'} %></td>
     </tr>
   <% end %>
   </tbody>
