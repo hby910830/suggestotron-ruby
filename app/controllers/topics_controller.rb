@@ -61,6 +61,15 @@ class TopicsController < ApplicationController
     end
   end
 
+  def upvote
+    # 从资料库里面用 id 找到 topic 然后存进 @topic 变数里面。
+    @topic = Topic.find(params[:id])
+    # 给目前这篇 topic 新增一笔投票记录，然后存进资料库里面。
+    @topic.votes.create
+    # 跟浏览器说要回到 topics_path（topics 的列表）。
+    redirect_to(topics_path)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_topic
